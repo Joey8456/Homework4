@@ -47,11 +47,6 @@ class NewsFeed {
     }
 }
 
-
-
-
-
-
 /**********************************************************/
 /* Strategy Pattern Interface/Classes                     */
 /*
