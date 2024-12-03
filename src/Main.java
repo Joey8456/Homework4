@@ -49,7 +49,7 @@ class NewsFeed {
 
 /**********************************************************/
 /* Strategy Pattern Interface/Classes                     */
-/*
+
 // Provided: Strategy Interface 
 interface AnalysisBehavior {
     double analyze(String[] words, String searchWord);
@@ -57,19 +57,37 @@ interface AnalysisBehavior {
 
 // Task: Complete Class CountIfAnalysis
 class CountIfAnalysis implements AnalysisBehavior {
-
-
+   public double analyze(String[] words, String searchWord){
+       boolean found = false;
+       int i = 0;
+       while (i < words.length && !found){
+           System.out.println(words[i]);
+           if((words[i].replaceAll("\\p{Punct}","")).equalsIgnoreCase(searchWord)){
+               found = true;
+           }
+           i++;
+       }
+       if (found) return 1;
+       else return -1;
+    }
 }
-// Task: Complete Class CountAllAnalysis
+// Task: Complete Class CountAllAnalysis ADD DOCUMENTATION
 class CountAllAnalysis implements AnalysisBehavior {
-
-
+    public double analyze(String[] words, String searchWord) {
+        double cntr = 0;
+        for(int i = 0; i <words.length;i++){
+            if((words[i].replaceAll("\\p{Punct}","")).equalsIgnoreCase(searchWord)){
+                cntr += 1;
+            }
+        }
+        return cntr;
+    }
 }
-*/
+
 
 /**********************************************************/
 /* Observer Pattern Interface/Classes                     */
-/**********************************************************/
+/*
 
 interface Subject {  // Notifying about state changes 
     void subscribe(Observer obs);
@@ -173,8 +191,18 @@ class InstagramFactory implements SMPFactory {
 */ //ADDED
 public class Main {
     public static void main(String[] args) throws IOException {
-        NewsFeed news = new NewsFeed("hw4data");
-        System.out.println(news.getRandomFeed());
+
+
+
+
+        //Feed f = new Feed("orange Apple", "Orange. Orange Orange!@ Orange banna ola fgf");
+       // String[] s = f.toString().split(" ");
+       // CountAllAnalysis test = new CountAllAnalysis();
+        //double t = test.analyze(s,"Orange");
+       // System.out.println(t);
+        //NewsFeed news = new NewsFeed("hw4data");
+       // System.out.println(news.getRandomFeed());
+
     }
 }
 
