@@ -87,7 +87,7 @@ class CountAllAnalysis implements AnalysisBehavior {
 
 /**********************************************************/
 /* Observer Pattern Interface/Classes                     */
-/*
+
 
 interface Subject {  // Notifying about state changes 
     void subscribe(Observer obs);
