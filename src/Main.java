@@ -1,3 +1,9 @@
+/*
+Joseph Barron
+Homework 4
+This program is used to load feeds into a social media platform and generate random feeds for users who are
+subscribed to that platform, with analysis capabilities.
+ */
 import java.util.*;
 import java.io.*;
 /* Feed */
