@@ -235,10 +235,15 @@ public class Main {
         // Run a simulation to generate random feeds for the SMPs
         System.out.println("Loading Feeds for 20 seconds stand by ...");
         long startTime = System.currentTimeMillis();
-        long duration = 1;
+        long duration = 20000;
         while(System.currentTimeMillis() - startTime < duration){
-            for(int i =0; i<platforms.size();i++){
-                platforms.get(i).generateFeed(nf);
+            for (SocialMediaPlatform platform : platforms) {
+                platform.generateFeed(nf);
+                try {
+                    Thread.sleep(250);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
         }
         System.out.println("Finished Loading");
